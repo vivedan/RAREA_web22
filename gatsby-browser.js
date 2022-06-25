@@ -28,7 +28,10 @@ exports.shouldUpdateScroll = ({
   
   window.scrollTo(0, 0);
   const body = document.getElementsByClassName('mainCont')[0];
-  body.scrollTop = 0;
+  if(body){
+    body.scrollTop = 0;
+  }
+  
 
   return false
 }
