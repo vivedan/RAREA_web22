@@ -1,0 +1,440 @@
+html, body{
+	margin: 0;
+	font-family: neue-haas-unica, sans-serif;
+	font-weight: 800;
+	font-style: normal;
+}
+
+
+
+.mainCont{
+	position: relative;
+	z-index: 1;
+	margin: 0;
+	width: 100vw;
+	height: 100vh;
+	/* overflow: hidden; */
+}
+
+.headerCont{
+	width: 100vw;
+	height: 70px;
+	position: fixed;
+	top: 10px;
+	background: transparent;
+	display: flex;
+	flex-direction: row;
+	justify-content: center;
+	align-items: center;
+}
+
+.logo{
+	/* background-image: url('/logoweb2White.png');
+	background-repeat: no-repeat;
+	background-size: contain; */
+	height: 100%;
+	width: auto;
+	margin: 10px 70px;
+}
+
+.headerLink{
+	color: white;
+	text-decoration: none;
+	width: 100px;
+	text-align: center;
+}
+
+.headerLink:hover {
+	font-size: 18px;
+}
+
+.buttonCont{
+	position: absolute;
+	bottom: 50px;
+	left: 10px;
+	z-index: 1000;
+	display: flex;
+	flex-direction: column-reverse;
+	gap: 30px;
+}
+
+.listButton{
+	width: 30px;
+	height: 30px;
+	background-size: contain;
+}
+
+.listButton:hover{
+	cursor: pointer;
+}
+
+
+
+.footerCont{
+	width: 100vw;
+	height: 5vh;
+	position: fixed;
+	bottom: 0;
+	display: flex;
+	flex-direction: row;
+	justify-content: space-around;
+	align-items: center;
+	color: white;
+	border-top: 2px solid rgba(255, 255, 255, 0.5);
+}
+
+.footerLink{
+	position: relative;
+	/* bottom: 20px; */
+	cursor: pointer;
+	font-size: 20px;
+	padding: 1px 20px;
+	opacity: 0.7;
+}
+
+.footerLink:hover{
+	opacity: 0.9;
+	cursor: pointer;
+}
+
+.selectionFooter{
+	
+	border-radius: 100px;
+	border: 1px solid white;
+	opacity: 1;
+}
+
+.canvas{
+    position: fixed;
+    margin: 0;
+    z-index: -100;
+    /* background: linear-gradient(-45deg, #ee7752, #e73c7e, #23a6d5, #23d5ab); */
+	/* background-size: 400% 400%;
+	animation: gradient 15s ease infinite; */
+    height: 100vh;
+    width: 100vw;
+	pointer-events: all;
+}
+
+@keyframes gradient {
+	0% {
+		background-position: 0% 50%;
+	}
+	50% {
+		background-position: 100% 50%;
+	}
+	100% {
+		background-position: 0% 50%;
+	}
+}
+
+.projectLabelCont{
+	display: flex;
+	flex-direction: column;
+	
+}
+
+.projectLabelTitle{
+	font-size: 80px;
+	padding: 0px;
+	margin: 0;
+	line-height: 90px;
+}
+
+.projectLabelSubtitle{
+	font-size: 20px;
+	padding: 0px;
+	margin: 0;
+}
+
+.arrowLabel {
+	width: 0; 
+	height: 0; 
+	border-left: 5px solid transparent;
+	border-right: 5px solid transparent;
+	border-top: 5px solid rgb(255, 255, 255);
+	opacity: 1;
+}
+
+.noselect {
+	-webkit-touch-callout: none; /* iOS Safari */
+	  -webkit-user-select: none; /* Safari */
+	   -khtml-user-select: none; /* Konqueror HTML */
+		 -moz-user-select: none; /* Old versions of Firefox */
+		  -ms-user-select: none; /* Internet Explorer/Edge */
+			  user-select: none; /* Non-prefixed version, currently
+									supported by Chrome, Edge, Opera and Firefox */
+  }
+
+.overlayMainCont{
+	transform: scale(1);
+	position: absolute;
+	z-index: 9000;
+	width: 100vw;
+    height: 100vh;
+    transform-origin: center;
+	overflow: hidden;
+}
+
+.overlayMainCont.animateOverlay{
+	animation: overlayAnim 2s ease-in;
+}
+
+@keyframes overlayAnim {
+	0% {
+		transform: scale(1);
+		opacity: 1;
+	}
+	100% {
+		transform: scale(10);
+		opacity: 0;
+	}
+}
+
+.sliderCont{
+	background: linear-gradient(-45deg, #ecc9bf, #e6cad5, #b1c9d2, #b7d0ca);
+	background-size: 400% 400%;
+	animation: gradient 15s ease infinite;
+	position: absolute;
+	width: 100vw;
+	height: 100vh;
+	z-index: 10000;
+	overflow: hidden;
+	cursor: pointer;
+	pointer-events: all;
+}
+
+.entryImg{
+	width: 100%;
+	height: 100%;
+	transform: scale(1);
+	transform-origin: center;
+	mix-blend-mode: luminosity;
+	opacity: 0.8;
+	filter: brightness(1.3) contrast(1.2);
+	object-fit: cover;
+	/* animation: imageScale 5s ease; */
+	/* transition: all 5s linear; */
+}
+
+.entryImg.animateScale{
+	animation: imageScale 5s ease-in-out;
+}
+
+.sliderCont.masked{
+	mask-image: url('/logoweb2BlackMask.png');
+	mask-size: cover;
+	mask-repeat: no-repeat;
+	mask-position: center;
+	mask-composite: exclude;
+}
+
+
+
+@keyframes imageScale {
+	0% {
+		transform: scale(1);
+	}
+	100% {
+		transform: scale(1.1);
+	}
+}
+
+
+.mainOverlay{
+	background: url('/overlayBack.gif');
+	background-repeat: no-repeat;
+	background-size: cover;
+	background-position: center;
+	width: 100vw;
+	height: 100vh;
+	position: absolute;
+	z-index: 1000;
+	color: white;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	mask-image: url('/logoweb2BlackMask.png');
+	mask-size: 100%;
+	mask-repeat: no-repeat;
+	mask-position: center;
+	mask-composite: exclude;
+	left: 50%;
+	top: 50%;
+	transform: translate(-50%, -50%);
+}
+
+.overlayTextCont{
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	position: absolute;
+	z-index: 100000;
+	left: 50%;
+	transform: translateX(-50%);
+	bottom: 5vh;
+	color: white;
+	mix-blend-mode: difference;
+	opacity: 0.8;
+	cursor: pointer;
+	pointer-events: all;
+}
+
+.overlayTextContDouble{
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	position: absolute;
+	z-index: 100010;
+	left: 50%;
+	transform: translateX(-50%);
+	bottom: 5vh;
+	color: white;
+	mix-blend-mode: overlay;
+	cursor: pointer;
+	pointer-events: all;
+}
+
+.overlayTitle{
+	font-size: 50px;
+	margin: 0px;
+	letter-spacing: 3px;
+}
+
+.overlaySubtitle{
+	font-size: 20px;
+	font-weight: 800;
+	letter-spacing: 5px;
+}
+
+
+/* Portrait */
+@media screen and (orientation:portrait) and (max-width: 600px) {
+    /* Portrait styles here */
+  
+	.projectLabelCont{
+		display: flex;
+		flex-direction: column;
+		width: 100vw;
+		align-items: center;
+	}
+
+    .projectLabelTitle{
+		font-size: 40px;
+		width: 80vw;
+		text-align: center;
+		line-height: 50px;
+	}
+
+	.projectLabelSubtitle{
+		font-size: 20px;
+		width: 80vw;
+		text-align: center;
+	}
+
+	.footerCont{
+		height: 35vh;
+		flex-direction: column;
+		align-items: end;
+	}
+
+	.footerLink{
+		margin: 0 10px;
+	}
+
+	.buttonCont{
+		bottom: 10px;
+	}
+
+	.overlayTitle{
+		width: 100vw;
+		text-align: center;
+		font-size: 30px;
+	}
+
+	.overlaySubtitle{
+		text-align: center;
+		font-size: 15px;
+	}
+
+	
+    .logo{
+        margin: 10px 30px;
+    }
+
+}
+
+@media screen and (orientation:portrait) and (max-width: 320px) {
+/* Portrait styles here */
+
+    
+
+}
+
+/* Landscape */
+@media screen and (orientation:landscape) and (max-height: 700px) {
+/* Landscape styles here */
+
+	.projectLabelCont{
+		display: flex;
+		flex-direction: column;
+		width: 30vw;
+	}
+
+	.projectLabelTitle{
+		font-size: 50px;
+		line-height: 50px;
+	}
+
+	.projectLabelSubtitle{
+		font-size: 20px;
+	}
+
+	.overlayTextCont, .overlayTextContDouble{
+		width: 100vw;
+		flex-direction: row;
+		justify-content: space-around;
+		top: 50%;
+		transform: translate(-50%, -50%);
+	}
+
+	.overlayTitle{
+		width: 30vw;
+		text-align: left;
+		font-size: 30px;
+		margin: 0px 20px;
+	}
+
+	.overlaySubtitle{
+		width: 30vw;
+		text-align: right;
+		font-size: 15px;
+	}
+
+	
+	.footerCont{
+		height: 10vh;
+	}
+
+	.footerLink{
+		font-size: 15px;
+		margin: 0 10px;
+	}
+
+	.buttonCont{
+		top: 50%;
+		transform: translateY(-50%);
+	}
+
+
+
+}
+
+@media screen and (orientation:landscape) and (max-height: 320px) {
+/* Landscape styles here */
+
+
+}

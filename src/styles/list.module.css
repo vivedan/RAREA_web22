@@ -1,0 +1,142 @@
+.projectList{
+    position: absolute;
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    margin: 0;
+    overflow: hidden;
+}
+
+.projectListContainer{
+    width: 90%;
+    height: 80%;
+    margin: 0;
+    /* left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%); */
+    background: rgba(0, 0, 0, 0.348);
+    z-index: 1000;
+    color: white;
+    display: flex;
+    gap: 20px;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.projectLabelCont{
+    width: 20%;
+    flex-basis: 25%;
+    cursor: pointer;
+}
+
+h2{
+    font-size: 25px;
+    padding: 0;
+    margin: 10px 20px;
+}
+
+h3{
+    font-size: 18px;
+    padding: 0;
+    margin: 10px 20px;
+    opacity: 0.5;
+}
+
+.arrowCont{
+    position: absolute;
+    bottom: -10px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    gap: 30px;
+    z-index: 10000;
+    
+}
+
+.arrow{
+    border: solid rgb(255, 255, 255);
+    border-width: 0 3px 3px 0;
+    display: inline-block;
+    padding: 10px;
+    cursor: pointer;
+}
+
+.right {
+    transform: rotate(-45deg);
+    -webkit-transform: rotate(-45deg);
+}
+
+.left {
+    transform: rotate(135deg);
+    -webkit-transform: rotate(135deg);
+}
+
+
+/* Portrait */
+@media screen and (orientation:portrait) and (max-width: 600px) {
+    /* Portrait styles here */
+  
+	.projectListContainer{
+        flex-direction: column;
+        position: absolute;
+        top: 12vh;
+        height: 50%;
+        gap: 0px;
+    }
+
+    .projectLabelCont{
+        width: 90%;
+    }
+
+    h2{
+        font-size: 20px;
+    }
+
+    h3{
+        font-size: 15px;
+    }
+
+}
+
+@media screen and (orientation:portrait) and (max-width: 320px) {
+/* Portrait styles here */
+
+    
+
+}
+
+/* Landscape */
+@media screen and (orientation:landscape) and (max-height: 700px) {
+/* Landscape styles here */
+
+    .projectListContainer{
+        flex-direction: row;
+        position: absolute;
+        height: 60%;
+        width: 80vw;
+        gap: 0px;
+    }
+
+    .projectLabelCont{
+        width: 90%;
+    }
+
+    h2{
+        font-size: 20px;
+    }
+
+    h3{
+        font-size: 15px;
+    }
+
+}
+
+@media screen and (orientation:landscape) and (max-height: 320px) {
+/* Landscape styles here */
+
+
+}
