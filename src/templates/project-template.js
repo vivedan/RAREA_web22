@@ -4,6 +4,7 @@ import React, { Component, useEffect, useState, useRef } from 'react';
 
 import * as projectStyles from '../styles/projects.module.css';
 
+import SEO from '../components/Seo';
 import 'animate.css';
 import {CSSTransition} from 'react-transition-group';
 
@@ -60,6 +61,8 @@ function ProjectTemplate( props ) {
 
 
     return (
+      <>
+        <SEO title={title} /> 
         <div ref={myCont} className={projectStyles.projectCont} >
           <div className={projectStyles.restCont} onClick={(e) => handleClick()}></div>
           <div className={`${projectStyles.projectWrapper} animate__animated animate__fadeInRightBig`}>
@@ -114,6 +117,7 @@ function ProjectTemplate( props ) {
             </div>
           </div>
         </div>
+      </>
     );
 }
 

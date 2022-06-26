@@ -328,8 +328,10 @@ function Layout({children, location}) {
     
     //console.log(breakpoints);
 
+    //<div className="mainCont" style={{overflow: isFirstTime ? "hidden" : "hidden scroll"}}>
+
     return (
-        <div className="mainCont" style={{overflow: isFirstTime ? "hidden" : "hidden scroll"}}>
+        <div className="mainCont" style={{overflow: "hidden"}}>
             {isHome && <Header />}
             {isFirstTime && isHome && <MainOverlay setIsFirstTime={setIsFirstTime}/>}
             <HomeCanvas 

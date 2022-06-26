@@ -10,7 +10,16 @@ const myCustomQueries = {
 
 module.exports = {
   siteMetadata: {
-    siteUrl: `https://www.yourdomain.tld`,
+    title: "Rarea Studio",
+    titleTemplate: "%s · Experimental Experience Architecture",
+    description: "Rarea is a studio researching flexible art experiences through virtual and textile architectural design.",
+    url: "https://rareastudio.com", // No trailing slash allowed!
+    image: "/RAREA_portrait1.jpg", // Path to the image placed in the 'static' folder, in the project's root directory.
+    twitterUsername: "@RareaStudio",
+    facebookUsername: "rareastudio",
+    siteLanguage: "en",
+    ogLanguage: "en_GB",
+    author: "Rarea Studio"
   },
   plugins: [
     'gatsby-plugin-transition-link',
@@ -19,6 +28,7 @@ module.exports = {
     'gatsby-transformer-sharp',
     'gatsby-transformer-remark',
     'gatsby-plugin-lodash',
+    'gatsby-plugin-react-helmet',
     {
       resolve: `gatsby-plugin-manifest`,
       options: {

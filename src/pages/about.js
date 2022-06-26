@@ -4,6 +4,7 @@ import React, { Component, useEffect, useState } from 'react';
 
 import * as projectStyles from '../styles/projects.module.css';
 
+import SEO from '../components/Seo';
 import 'animate.css';
 import {CSSTransition} from 'react-transition-group';
 
@@ -29,22 +30,25 @@ function AboutTemplate( props ) {
 
 
     return (
-        <div className={projectStyles.projectCont} >
-          <div className={projectStyles.restCont} onClick={(e) => handleClick()}></div>
-          <div className={`${projectStyles.projectWrapper} animate__animated animate__fadeInRightBig`}>
-            <div className={projectStyles.close} onClick={(e) => handleClick()}></div>
-            <div className={projectStyles.line}></div>
-            <img className={projectStyles.imgPortrait} src="/RAREA_portrait1.jpg" />
-            <h1 className={projectStyles.aboutTitle}>Rarea Studio</h1>
-            <p className={projectStyles.about1}>{about1}</p>
-            <p className={projectStyles.about2}>{about2}</p>
-            <div className={projectStyles.aboutFlex}>
-              <p className={projectStyles.about2}>{aboutPatricia}</p>
-              <p className={projectStyles.about2}>{aboutDaniel}</p>
+      <>
+          <SEO title="About" /> 
+          <div className={projectStyles.projectCont} >
+            <div className={projectStyles.restCont} onClick={(e) => handleClick()}></div>
+            <div className={`${projectStyles.projectWrapper} animate__animated animate__fadeInRightBig`}>
+              <div className={projectStyles.close} onClick={(e) => handleClick()}></div>
+              <div className={projectStyles.line}></div>
+              <img className={projectStyles.imgPortrait} src="/RAREA_portrait1.jpg" />
+              <h1 className={projectStyles.aboutTitle}>Rarea Studio</h1>
+              <p className={projectStyles.about1}>{about1}</p>
+              <p className={projectStyles.about2}>{about2}</p>
+              <div className={projectStyles.aboutFlex}>
+                <p className={projectStyles.about2}>{aboutPatricia}</p>
+                <p className={projectStyles.about2}>{aboutDaniel}</p>
+              </div>
+              <p className={projectStyles.about2}>{about3}</p>
             </div>
-            <p className={projectStyles.about2}>{about3}</p>
           </div>
-        </div>
+      </>
     );
 }
 

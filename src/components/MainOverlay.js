@@ -38,7 +38,7 @@ function Slider(props){
 
     //console.log(images);
 
-    const [image, setImage] = useState(images[1]);
+    const [image, setImage] = useState(images[0]);
 
     const [imageUpdate, setUpdate] = useState(false);
 
@@ -51,9 +51,15 @@ function Slider(props){
     useEffect(() => {
         setMounted(true);
 
-        return () => setMounted(false);
+        return () => {setMounted(false)};
     }, [])
 
+    useEffect(() => {
+        if(isMounted){
+            //console.log("is mounted")
+            setImage(images[1])
+        }
+    }, [isMounted])
 
     function loopImage(){
         if(index < (images.length - 1 )){
@@ -67,6 +73,7 @@ function Slider(props){
 
     //TIMEOUT TO UPDATE IMAGE WHEN SCALE ANIMATION IS FINISHED
     useEffect(() => {
+        //console.log(isMounted)
         setUpdate(true);
         setTimeout(() => {
             if(isMounted){
