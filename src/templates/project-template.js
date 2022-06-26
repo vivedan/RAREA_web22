@@ -73,7 +73,7 @@ function ProjectTemplate( props ) {
                 <div className={projectStyles.creditCont}>
                   <div className={projectStyles.typeCont}>
                     {types.map(type => (
-                      <h4 className={projectStyles.projectType}>{type}</h4>
+                      <h4 className={projectStyles.projectType} key={Math.random()}>{type}</h4>
                     ))}
                   </div>
                   <h4 className={projectStyles.projectCredits}>{credits}</h4>

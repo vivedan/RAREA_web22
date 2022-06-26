@@ -148,11 +148,11 @@ function Layout({children, location}) {
             mountRef.current = true;
         }else if(projectSelection[0]==="allProjects"){
             setMenuProjects(allProjects);
-        }else if(projectSelection.length == 0){
+        }else if(projectSelection.length === 0){
             //return setMenuProjects([]);
             setProjectSelection(["allProjects"]);
         }
-        else if(projectSelection.length == 4){
+        else if(projectSelection.length === 4){
             setProjectSelection(["allProjects"]);
         }
         else{
@@ -295,14 +295,14 @@ function Layout({children, location}) {
     useEffect(() => {
         if(isHome){//HOME
             setPrSelected(null);
-            console.log('home');
+            //console.log('home');
             
         }else if(children.props.data){//PROJECT
             let prSlug = children.props.data.info.nodes[0].frontmatter.slug;
             let bgColor = children.props.data.info.nodes[0].frontmatter.background.join();
             setColor(bgColor);
             setPrSelected(prSlug);
-            console.log("project: " + children.props.data.info.nodes[0].frontmatter.title);
+            //console.log("project: " + children.props.data.info.nodes[0].frontmatter.title);
         }else{//OTHER
             let bgColor = "darkgrey, orange, blue, black";
             setColor(bgColor);

@@ -23,7 +23,7 @@ exports.shouldUpdateScroll = ({
   routerProps: { location },
   getSavedScrollPosition,
 }) => {
-  const { pathname } = location
+  //const { pathname } = location
   // if the new route is part of the list above, scroll to top (0, 0)
   
   window.scrollTo(0, 0);

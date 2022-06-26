@@ -44,7 +44,15 @@ function Slider(props){
 
     const [index, setIndex] = useState(1);
 
-    
+    const [isMounted, setMounted] = useState(false);
+
+
+    //CHECK MOUNT / UNMOUNT OF COMPONENTS TO CHECK THE LEAK ON TIMEOUT OF ANIMATION
+    useEffect(() => {
+        setMounted(true);
+
+        return () => setMounted(false);
+    }, [])
 
 
     function loopImage(){
@@ -61,8 +69,11 @@ function Slider(props){
     useEffect(() => {
         setUpdate(true);
         setTimeout(() => {
-            setUpdate(false);
-            loopImage();
+            if(isMounted){
+                setUpdate(false);
+                loopImage();
+            }
+            
         }, 5000) // TIMEOUT NEEDS MATCHING THE DURATION OF CSS ANIMATION imageScale
     }, [image])
 
@@ -93,41 +104,43 @@ function MainOverlay(props) {
 
             <Slider />
 
-            <div className="overlayTextCont">
-                <h1 className="overlayTitle">Rarea Studio</h1>
-                <h2 className="overlaySubtitle">
-                    Designing{" "}
-                    <TextLoop>
-                        <span>invisible</span>
-                        <span>evolving</span>
-                        <span>textile</span>
-                        <span>virtual</span>
-                        <span>alternative</span>
-                        <span>immersive</span>
-                        <span>fluid</span>
-                        <span>digital</span>
-                    </TextLoop>{" "}
-                    Architecture
-                </h2>
-            </div>
+            {overlay && <div>
+                <div className="overlayTextCont">
+                    <h1 className="overlayTitle">Rarea Studio</h1>
+                    <h2 className="overlaySubtitle">
+                        Designing{" "}
+                        <TextLoop>
+                            <span>invisible</span>
+                            <span>evolving</span>
+                            <span>textile</span>
+                            <span>virtual</span>
+                            <span>alternative</span>
+                            <span>immersive</span>
+                            <span>fluid</span>
+                            <span>digital</span>
+                        </TextLoop>{" "}
+                        Architecture
+                    </h2>
+                </div>
 
-            <div className="overlayTextContDouble" onClick={()=>setOverlay(false)}>
-                <h1 className="overlayTitle">Rarea Studio</h1>
-                <h2 className="overlaySubtitle">
-                    Designing{" "}
-                    <TextLoop>
-                        <span>invisible</span>
-                        <span>evolving</span>
-                        <span>textile</span>
-                        <span>virtual</span>
-                        <span>alternative</span>
-                        <span>immersive</span>
-                        <span>fluid</span>
-                        <span>digital</span>
-                    </TextLoop>{" "}
-                    Architecture
-                </h2>
-            </div>
+                <div className="overlayTextContDouble" onClick={()=>setOverlay(false)}>
+                    <h1 className="overlayTitle">Rarea Studio</h1>
+                    <h2 className="overlaySubtitle">
+                        Designing{" "}
+                        <TextLoop>
+                            <span>invisible</span>
+                            <span>evolving</span>
+                            <span>textile</span>
+                            <span>virtual</span>
+                            <span>alternative</span>
+                            <span>immersive</span>
+                            <span>fluid</span>
+                            <span>digital</span>
+                        </TextLoop>{" "}
+                        Architecture
+                    </h2>
+                </div>
+            </div>}
 
             {/* <div className="mainOverlay" onClick={() => props.setIsFirstTime(false)}>
                 

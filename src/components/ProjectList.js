@@ -25,9 +25,9 @@ function ProjectList(props) {
         //setPrs(prs => [...prs, chunk])
     }
 
-    function appendChunk(chunk){
+    /* function appendChunk(chunk){
         prs.concat(chunk)
-    }
+    } */
 
     /* useEffect(() => {
         //console.log(chunkArray);
@@ -62,10 +62,10 @@ function ProjectList(props) {
     return ( 
         <div className={listStyles.projectList}>
             <div className={`${listStyles.projectListContainer} animate__animated animate__fadeInBottomLeft`}>
-                {(chunkArray.length != 0) && chunkArray[index].map(project => (
+                {(chunkArray.length !== 0) && chunkArray[index].map(project => (
                     <div className={listStyles.projectLabelCont} key={Math.random()} onClick={() => handleClick(project.node.frontmatter.slug)}>
-                        <h2 className={listStyles.projectTitle}>{project.node.frontmatter.title}</h2>
-                        <h3 className={listStyles.projectSubtitle}>{project.node.frontmatter.subtitle}</h3>
+                        <h2>{project.node.frontmatter.title}</h2>
+                        <h3>{project.node.frontmatter.subtitle}</h3>
                     </div>
                             
                 ))}

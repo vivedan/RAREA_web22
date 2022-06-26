@@ -86,6 +86,14 @@ transform: rotate(-45deg);
     
 }
 
+.projectTitle{
+    white-space: break-spaces;
+}
+
+.projectSubtitle{
+    white-space: break-spaces;
+}
+
 .creditCont{
     display: flex;
     flex-direction: column;
@@ -200,12 +208,20 @@ a:hover, .tags:hover{
     cursor: pointer;
 }
 
+.aboutTitle{
+    white-space: break-spaces;
+}
+
 
 .about1{
     font-style: italic;
     white-space: break-spaces;
 }
 
+
+.about2{
+    white-space: break-spaces;
+}
 
 .aboutFlex{
     display: flex;
