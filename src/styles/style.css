@@ -308,6 +308,8 @@ html, body{
 	font-size: 20px;
 	font-weight: 800;
 	letter-spacing: 5px;
+	width: 80vw;
+    text-align: center;
 }
 
 
@@ -347,6 +349,10 @@ html, body{
 
 	.buttonCont{
 		bottom: 10px;
+	}
+
+	.overlayTextCont, .overlayTextContDouble{
+		bottom: 10vh;
 	}
 
 	.overlayTitle{

@@ -245,7 +245,12 @@ function Layout({children, location}) {
         //MAYBE THIS IF IS INNECESSARY, ONLY LEAVE ELSE?
         if(isHome){
             if(breakpoints.sm){
-                setCameraPos(new THREE.Vector3(0, camMobileHeight, 0))
+                if(breakpoints.portrait){
+                    setCameraPos(new THREE.Vector3(-2, camMobileHeight + 20, 0))
+                }else{
+                    setCameraPos(new THREE.Vector3(0, camMobileHeight - 40, 2))
+                }
+                
             }else{
                 setCameraPos(new THREE.Vector3(0, camPCHeight, 0))
             }

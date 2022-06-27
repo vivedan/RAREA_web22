@@ -30,7 +30,7 @@ function ContactTemplate( props ) {
               <div className={projectStyles.contactCont}>
                 <div className={projectStyles.contactDataCont}>
                   <h1>Rarea Studio</h1>
-                  <h2>Patricia Mascarell & Daniel Vera</h2>
+                  <h2 className="namesContact">Patricia Mascarell & Daniel Vera</h2>
                   <p>T. +44 (0) 7491784705</p>
                   <p>info@rareastudio.com</p>
                 </div>

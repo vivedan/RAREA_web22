@@ -84,7 +84,7 @@ h3{
         flex-direction: column;
         position: absolute;
         top: 12vh;
-        height: 50%;
+        height: 48vh;
         gap: 0px;
     }
 
@@ -93,7 +93,7 @@ h3{
     }
 
     h2{
-        font-size: 20px;
+        font-size: 18px;
     }
 
     h3{

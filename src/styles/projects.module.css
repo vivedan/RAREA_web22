@@ -351,6 +351,21 @@ a:hover, .tags:hover{
     .aboutFlex{
         flex-direction: column;
     }
+
+    .contactCont{
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .contactDataCont{
+        align-items: center;
+        justify-content: center;
+    }
+
+    .namesContact{
+        text-align: center;
+    }
   
 }
 

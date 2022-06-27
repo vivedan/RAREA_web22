@@ -107,6 +107,7 @@ function MainOverlay(props) {
     }, [overlay])
 
     return (
+        <>
         <div className={`overlayMainCont ${!overlay ? "animateOverlay" : ""}`} onClick={()=>setOverlay(false)} >
 
             <Slider />
@@ -171,6 +172,7 @@ function MainOverlay(props) {
                 
             </div> */}
         </div>
+        </>
     );
 }
 

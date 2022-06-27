@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 
 import {Html} from '@react-three/drei';
 
-function ProjectLabel({hovered, clicked, selected, title, subtitle, showLabels}) {
+function ProjectLabel({hovered, clicked, selected, title, subtitle, showLabels, prSelected}) {
     if(hovered){
         return (
             <Html 
@@ -25,7 +25,7 @@ function ProjectLabel({hovered, clicked, selected, title, subtitle, showLabels})
                     </div>
             </Html>
         );
-    }else if(showLabels){
+    }else if(showLabels && !prSelected){
         return (
             <Html 
                 center 

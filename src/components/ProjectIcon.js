@@ -50,7 +50,7 @@ function ProjectIcon(props) {
 
             {/* <Model src={logo} scale={1.5} rotation={[0, 0, 0]} /> */}
             
-            <ProjectLabel hovered={hovered} title={title} subtitle={subtitle} selected={selected} showLabels={props.showLabels}/>
+            <ProjectLabel hovered={hovered} title={title} subtitle={subtitle} selected={selected} showLabels={props.showLabels} prSelected={props.prSelected}/>
         </group>
     );
 }
